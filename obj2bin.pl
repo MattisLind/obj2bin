@@ -554,8 +554,6 @@ if ($romtype eq 'BOOT' || $romtype eq 'DIAG') {
 
     my $start = $program{START}{ADDRESS};
 
-    sub m ($) { $_[0] & 0xFF; }
-
     # output the entire PROM buffer as a binary loader file
     for (my $idx = $adrmin; $idx < $adrmax+1; $idx += $bytesper) {
 	my $cnt = $idx+$bytesper <= $adrmax+1 ? $bytesper : $adrmax+1-$idx; # N bytes or whatever is left
